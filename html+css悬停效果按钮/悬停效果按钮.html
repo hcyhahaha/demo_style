@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悬停效果按钮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'montserrat',sans-serif;
+        }
+        body {
+            background-color: #204051;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            width: 200px;
+            height: 60px;
+            background: none;
+            border: 4px solid;
+            /* color: #3498db; */
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .btn1 {
+            color: #b83b5e;
+        }
+
+        .btn2 {
+            color: #8bcdcd;
+        }
+
+        .btn3 {
+            color: #6a2c70;
+        }
+
+        .btn4 {
+            color: #f4ebc1;
+        }
+
+        .btn::before, .btn::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 4px;
+            background: #204051;
+            transform: skewX(50deg);
+            transition: .4s linear;
+        }
+
+        .btn::before {
+            top: -4px;
+            left: 10%;
+        }
+
+        .btn::after {
+            bottom: -4px;
+            right: 10%;
+        }
+
+        .btn:hover::before {
+            left: 80%;
+        }
+
+        .btn:hover::after {
+            right: 80%;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn1">home page</button>
+    <button class="btn btn2">Personal Center</button>
+    <button class="btn btn3">Shopping Mall</button>
+    <button class="btn btn4">Shopping Cart</button>
+</body>
+</html>

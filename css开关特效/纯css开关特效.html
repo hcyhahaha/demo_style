@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=icon href=./1.png>
+    <title>纯css开关特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*内容居中*/
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            /*放大*/
+            position: relative;
+            transform: scale(2);
+            width: 100px;
+            height: 50px;
+            background-color: #9e9d9da4;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        label input {
+            visibility: hidden;
+        }
+
+        label input::after {
+            visibility: visible;
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 50%;
+            background-color: #fcfcfc;
+            transition: all .4s;
+        }
+
+        /* 当input元素被选中后 */
+        label input:checked::after {
+            transform: translateX(50px);
+        }
+
+        /* 设置input的背景颜色 */
+        label input::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /* background-color: lightslategray; */
+            visibility: visible;
+            transition: all .4s;
+        }
+        /* 选中input标签后设置before */
+        label input:checked::before {
+            background-color: #57b363;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 用label标签作为外层容器，在里面写input标签 -->
+    <label>
+        <!-- checkbox 多选框 -->
+        <input type="checkbox" class="checkbox">
+    </label>
+</body>
+
+</html>
